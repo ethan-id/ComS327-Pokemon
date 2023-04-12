@@ -1,4 +1,4 @@
-# ComS327-CSV
+# ComS327-Pokemon (1.08)
 ### Author:
 Ethan Hancock, ehancock@iastate.edu
 ### TA Notes: 
@@ -9,4 +9,4 @@ Ethan Hancock, ehancock@iastate.edu
  - 
 
 #### Methods Added
- - 
+ - pokemonBattle()

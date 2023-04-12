@@ -1,3 +1,70 @@
 4/11/23
-    4:44pm-
+    4:44pm-6:29pm
         Late Start to this project unfortunately, gonna be grinding to finish it by tomorrow night..
+        Added pokemonBattle()
+            just tells the user when they have encountered a pokemon and gives the manhattan distance
+    7:46pm-8:34pm
+        Updated parse.cpp & parse.h so that the vectors holding all of the parsed data from the CSV files are globally available within the program.
+        Updated pokemon.cpp to parse all files before the game starts running.
+    8:40pm-9:07pm
+        Pokmeon battles are now triggered 10% of the time the player moves into a tall grass terrain square.
+            One of the 1092 pokemon is randomly selected and the message
+            "Encountered a *pokemonName!" is displayed
+    9:40pm-10:40pm
+        While trying to generate a pokemon, noticed for some reason only pokemon.csv is being parsed correctly, other global vectors are not being populated...
+    10:41pm-12:05am
+        Decided to use the Professor's provided solution for 1.07 instead of mine,
+        global arrays of csv data are working as expected.
+        Running into some difficulty setting pokemon levels though
+4/12/23
+    1:36am-2:06am
+        Added createPokemon()
+        Got levels and other stats to work properly
+            Now when a pokemon is encountered a window pops up and displays the pokemon's name and all of it's stats.
+    2:07am-2:20am
+        Added some funny ascii art cuz why not
+    3:50am-4:44am
+        Generated pokemon now also have two learned moves
+    4:45am-5:30am
+        Adding prompt at beginning of game telling player to select their starting pokemon.
+            added givePlayerPokemon() and some logic in generateTrainers() to call it once at the start of the program
+    5:31am-6:54am
+        Added pokemonBattle()
+            displays trainer's first pokemon and player's starter
+            Trainers don't have any pokemon right now tho so it's just all zeros
+    6:54am-7:20am
+        Trainers get a pokemon now, just need to add the formula thingy so they have a chance to get up to a max of 6
+        
+        
+
+
+
+
+To find the level-up moveset of a pokemon, you’ll want 
+
+pokemon_moves.pokemon_id == pokemon.species_id 
+&& pokemon_moves.pokemon_move_method id == 1
+
+From these, select your two moves from a uniform distribution.
+
+
+
+
+Pokemon stats (attack, defense, etc.) are given in pokemon stats.csv. 
+
+The mapping of stat numbers to names is given in stats.csv. Each pokemon has an additive deviation from its species’ base stats, known as IVs (individual values). IVs for each stat are uniformly distributed in the range [0,15]. Generate IVs for each spawned pokemon for each of HP, attack, defense, speed, special attack, and special defense.
+
+
+On level-up
+HP = 
+((((base + IV) * 2) * level) / 100) + level + 10;
+All Other Stats = 
+((((base + IV) * 2) * level) / 100) + 5;
+
+
+
+All generated trainers
+(NPCs) should be given at least one random Pokemon. Assuming the trainer has n Pokemon, there is a 60%
+probability that the trainer will get an (n + 1)th Pokemon, up to a maximum of 6 Pokemon.
+
+
