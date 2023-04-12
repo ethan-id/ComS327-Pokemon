@@ -3,7 +3,7 @@
 Ethan Hancock, ehancock@iastate.edu
 ### TA Notes: 
 > When the player runs into a trainer, and a pokemon battle is triggered, the trainer and player's pokemon data is displayed beneath the map, requiring a terminal with a larger window size/height.
-> When a pokemon battle is triggered, the trainer's pokemon is randomly chosen out of their held pokemon, right now I'm not marking them as defeated after the battle, so you an enter a battle with them over and over again to verify that the pokemon you battle are the same.
+> When a pokemon battle is triggered, the trainer's pokemon is randomly chosen out of their held pokemon, right now I'm not marking them as defeated after the battle, so you can enter a battle with them over and over again to verify that the pokemon you battle are the same.
 
 ### Description:
 #### Major Changes:
