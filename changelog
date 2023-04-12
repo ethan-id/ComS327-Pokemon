@@ -34,33 +34,9 @@
             Trainers don't have any pokemon right now tho so it's just all zeros
     6:54am-7:20am
         Trainers get a pokemon now, just need to add the formula thingy so they have a chance to get up to a max of 6
-        
-        
-
-
-
-
-To find the level-up moveset of a pokemon, you’ll want 
-
-pokemon_moves.pokemon_id == pokemon.species_id 
-&& pokemon_moves.pokemon_move_method id == 1
-
-From these, select your two moves from a uniform distribution.
-
-
-
-
-Pokemon stats (attack, defense, etc.) are given in pokemon stats.csv. 
-
-The mapping of stat numbers to names is given in stats.csv. Each pokemon has an additive deviation from its species’ base stats, known as IVs (individual values). IVs for each stat are uniformly distributed in the range [0,15]. Generate IVs for each spawned pokemon for each of HP, attack, defense, speed, special attack, and special defense.
-
-
-On level-up
-HP = 
-((((base + IV) * 2) * level) / 100) + level + 10;
-All Other Stats = 
-((((base + IV) * 2) * level) / 100) + 5;
-
+    3:08pm-3:15pm
+        Updated readme in preparation for submission
+    3:15pm-
 
 
 All generated trainers

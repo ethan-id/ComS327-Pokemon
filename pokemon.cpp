@@ -112,6 +112,7 @@ class character: public position {
         char value[20];
         direction_t direction;
         worldPokemon heldPokemon[6];
+        int numPokemon;
         long int nextMoveTime;
         int defeated;
         char spawn;
@@ -911,18 +912,18 @@ void givePlayerPokemon(terrainMap *terrainMap) {
     mvwprintw(win, 14, 5, "%s", option1->pokeMoves[0].identifier);
     mvwprintw(win, 15, 5, "%s", option1->pokeMoves[1].identifier);
     
-    mvwprintw(win, 2, 34, "%s", option2->name);
-    mvwprintw(win, 3, 30, "Gender: %s", (option2->gender ? "Male" : "Female"));
-    mvwprintw(win, 4, 30, "Level: %d", option2->level);
-    mvwprintw(win, 6, 30, "HP: %d", option2->hp);
-    mvwprintw(win, 7, 30, "ATK: %d", option2->attack);
-    mvwprintw(win, 8, 30, "DEF: %d", option2->defense);
-    mvwprintw(win, 9, 30, "Sp-ATK: %d", option2->specialAttack);
-    mvwprintw(win, 10, 30, "Sp-DEF: %d", option2->specialDefense);
-    mvwprintw(win, 11, 30, "SPD: %d", option2->speed);
-    mvwprintw(win, 13, 30, "Knows:");
-    mvwprintw(win, 14, 31, "%s", option2->pokeMoves[0].identifier);
-    mvwprintw(win, 15, 31, "%s", option2->pokeMoves[1].identifier);
+    mvwprintw(win, 2, 32, "%s", option2->name);
+    mvwprintw(win, 3, 28, "Gender: %s", (option2->gender ? "Male" : "Female"));
+    mvwprintw(win, 4, 28, "Level: %d", option2->level);
+    mvwprintw(win, 6, 28, "HP: %d", option2->hp);
+    mvwprintw(win, 7, 28, "ATK: %d", option2->attack);
+    mvwprintw(win, 8, 28, "DEF: %d", option2->defense);
+    mvwprintw(win, 9, 28, "Sp-ATK: %d", option2->specialAttack);
+    mvwprintw(win, 10, 28, "Sp-DEF: %d", option2->specialDefense);
+    mvwprintw(win, 11, 28, "SPD: %d", option2->speed);
+    mvwprintw(win, 13, 28, "Knows:");
+    mvwprintw(win, 14, 29, "%s", option2->pokeMoves[0].identifier);
+    mvwprintw(win, 15, 29, "%s", option2->pokeMoves[1].identifier);
 
     mvwprintw(win, 2, 59, "%s", option3->name);
     mvwprintw(win, 3, 55, "Gender: %s", (option3->gender ? "Male" : "Female"));
@@ -1164,23 +1165,25 @@ void pokemonBattle(terrainMap *terrainMap, character *trainer) {
     mvprintw(26, 16, "Level: %d", terrainMap->pc.heldPokemon[0].level);
     mvprintw(27, 16, "Exp: %d", terrainMap->pc.heldPokemon[0].exp);
 
+    int pokemonToFight = rand() % trainer->numPokemon;
 
-    mvprintw(22, 33, "Trainer %c has a %s!", trainer->npc, trainer->heldPokemon[0].name);
+    mvprintw(22, 33, "Trainer %c has a %s!", trainer->npc, trainer->heldPokemon[pokemonToFight].name);
 
-    mvprintw(24, 31, "HP: %d", trainer->heldPokemon[0].hp);
-    mvprintw(25, 31, "ATK: %d", trainer->heldPokemon[0].attack);
-    mvprintw(26, 31, "DEF: %d", trainer->heldPokemon[0].defense);
-    mvprintw(27, 31, "Sp-ATK: %d", trainer->heldPokemon[0].specialAttack);
-    mvprintw(28, 31, "Sp-DEF: %d", trainer->heldPokemon[0].specialDefense);
-    mvprintw(29, 31, "SPD: %d", trainer->heldPokemon[0].speed);
+    mvprintw(24, 31, "HP: %d", trainer->heldPokemon[pokemonToFight].hp);
+    mvprintw(25, 31, "ATK: %d", trainer->heldPokemon[pokemonToFight].attack);
+    mvprintw(26, 31, "DEF: %d", trainer->heldPokemon[pokemonToFight].defense);
+    mvprintw(27, 31, "Sp-ATK: %d", trainer->heldPokemon[pokemonToFight].specialAttack);
+    mvprintw(28, 31, "Sp-DEF: %d", trainer->heldPokemon[pokemonToFight].specialDefense);
+    mvprintw(29, 31, "SPD: %d", trainer->heldPokemon[pokemonToFight].speed);
     mvprintw(30, 31, "Knows:");
-    mvprintw(31, 31, "%s", trainer->heldPokemon[0].pokeMoves[0].identifier);
-    mvprintw(32, 31, "%s", trainer->heldPokemon[0].pokeMoves[1].identifier);
+    mvprintw(31, 31, "%s", trainer->heldPokemon[pokemonToFight].pokeMoves[pokemonToFight].identifier);
+    mvprintw(32, 31, "%s", trainer->heldPokemon[pokemonToFight].pokeMoves[1].identifier);
     
-    mvprintw(24, 44, "Gender: %s", (trainer->heldPokemon[0].gender ? "Male" : "Female"));
-    mvprintw(25, 44, "Shiny: %s", (trainer->heldPokemon[0].shiny ? "Yes" : "No"));
-    mvprintw(26, 44, "Level: %d", trainer->heldPokemon[0].level);
-    mvprintw(27, 44, "Exp: %d", trainer->heldPokemon[0].exp);
+    mvprintw(24, 44, "Gender: %s", (trainer->heldPokemon[pokemonToFight].gender ? "Male" : "Female"));
+    mvprintw(25, 44, "Shiny: %s", (trainer->heldPokemon[pokemonToFight].shiny ? "Yes" : "No"));
+    mvprintw(26, 44, "Level: %d", trainer->heldPokemon[pokemonToFight].level);
+    mvprintw(27, 44, "Exp: %d", trainer->heldPokemon[pokemonToFight].exp);
+    mvprintw(28, 44, "NP: %d", trainer->numPokemon);
 
     refresh();
 }
@@ -1236,7 +1239,19 @@ void generateTrainers(terrainMap *terrainMap, int numTrainers) {
 
     for (i = 0; i < numTrainers - 1; i++) {
         createPokemon(terrainMap, &trainers[i]->heldPokemon[0]);
+        int addingPokemon = 1;
+        while(addingPokemon != 0) {
+            int val = rand() % 10;
+            if (val < 6 && addingPokemon < 6) {
+                createPokemon(terrainMap, &trainers[i]->heldPokemon[addingPokemon]);
+                addingPokemon++;
+            } else {
+                trainers[i]->numPokemon = addingPokemon;
+                addingPokemon = 0;
+            }
+        }
     }
+
 
     for (i = 0; i < numTrainers; i++) {
         trainers[i]->defeated = 0;
