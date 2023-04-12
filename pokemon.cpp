@@ -103,7 +103,6 @@ class worldPokemon: public position {
 class player: public position {
     public:
         int preset;
-        worldPokemon heldPokemon[6];
 };
 
 class character: public position {
@@ -137,6 +136,7 @@ class terrainMap {
 
 terrainMap *world[401][401];
 direction_t lastMove;
+worldPokemon heldPokemon[6];
 
 int decorateTerrain(char map[21][80]) {
     int i, j, k;
@@ -946,188 +946,188 @@ void givePlayerPokemon(terrainMap *terrainMap) {
     while(strcmp(str, "") == 0) {
         getstr(str);
         if (strcmp(str, "1") == 0) { // Choose Option 1
-            strcpy(terrainMap->pc.heldPokemon[0].name, option1->name);
+            strcpy(heldPokemon[0].name, option1->name);
 
             // Copy moves
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].id = option1->pokeMoves[0].id;
-                strcpy(terrainMap->pc.heldPokemon[0].pokeMoves[0].identifier, option1->pokeMoves[0].identifier);
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].generation_id = option1->pokeMoves[0].generation_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].type_id = option1->pokeMoves[0].type_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].power = option1->pokeMoves[0].power;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].pp = option1->pokeMoves[0].pp;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].accuracy = option1->pokeMoves[0].accuracy;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].priority = option1->pokeMoves[0].priority;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].target_id = option1->pokeMoves[0].target_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].damage_class_id = option1->pokeMoves[0].damage_class_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].effect_id = option1->pokeMoves[0].effect_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].effect_chance = option1->pokeMoves[0].effect_chance;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].contest_type_id = option1->pokeMoves[0].contest_type_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].contest_effect_id = option1->pokeMoves[0].contest_effect_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].super_contest_effect_id = option1->pokeMoves[0].super_contest_effect_id;
+                heldPokemon[0].pokeMoves[0].id = option1->pokeMoves[0].id;
+                strcpy(heldPokemon[0].pokeMoves[0].identifier, option1->pokeMoves[0].identifier);
+                heldPokemon[0].pokeMoves[0].generation_id = option1->pokeMoves[0].generation_id;
+                heldPokemon[0].pokeMoves[0].type_id = option1->pokeMoves[0].type_id;
+                heldPokemon[0].pokeMoves[0].power = option1->pokeMoves[0].power;
+                heldPokemon[0].pokeMoves[0].pp = option1->pokeMoves[0].pp;
+                heldPokemon[0].pokeMoves[0].accuracy = option1->pokeMoves[0].accuracy;
+                heldPokemon[0].pokeMoves[0].priority = option1->pokeMoves[0].priority;
+                heldPokemon[0].pokeMoves[0].target_id = option1->pokeMoves[0].target_id;
+                heldPokemon[0].pokeMoves[0].damage_class_id = option1->pokeMoves[0].damage_class_id;
+                heldPokemon[0].pokeMoves[0].effect_id = option1->pokeMoves[0].effect_id;
+                heldPokemon[0].pokeMoves[0].effect_chance = option1->pokeMoves[0].effect_chance;
+                heldPokemon[0].pokeMoves[0].contest_type_id = option1->pokeMoves[0].contest_type_id;
+                heldPokemon[0].pokeMoves[0].contest_effect_id = option1->pokeMoves[0].contest_effect_id;
+                heldPokemon[0].pokeMoves[0].super_contest_effect_id = option1->pokeMoves[0].super_contest_effect_id;
 
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].id = option1->pokeMoves[1].id;
-                strcpy(terrainMap->pc.heldPokemon[0].pokeMoves[1].identifier, option1->pokeMoves[1].identifier);
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].generation_id = option1->pokeMoves[1].generation_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].type_id = option1->pokeMoves[1].type_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].power = option1->pokeMoves[1].power;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].pp = option1->pokeMoves[1].pp;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].accuracy = option1->pokeMoves[1].accuracy;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].priority = option1->pokeMoves[1].priority;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].target_id = option1->pokeMoves[1].target_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].damage_class_id = option1->pokeMoves[1].damage_class_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].effect_id = option1->pokeMoves[1].effect_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].effect_chance = option1->pokeMoves[1].effect_chance;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].contest_type_id = option1->pokeMoves[1].contest_type_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].contest_effect_id = option1->pokeMoves[1].contest_effect_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].super_contest_effect_id = option1->pokeMoves[1].super_contest_effect_id;
+                heldPokemon[0].pokeMoves[1].id = option1->pokeMoves[1].id;
+                strcpy(heldPokemon[0].pokeMoves[1].identifier, option1->pokeMoves[1].identifier);
+                heldPokemon[0].pokeMoves[1].generation_id = option1->pokeMoves[1].generation_id;
+                heldPokemon[0].pokeMoves[1].type_id = option1->pokeMoves[1].type_id;
+                heldPokemon[0].pokeMoves[1].power = option1->pokeMoves[1].power;
+                heldPokemon[0].pokeMoves[1].pp = option1->pokeMoves[1].pp;
+                heldPokemon[0].pokeMoves[1].accuracy = option1->pokeMoves[1].accuracy;
+                heldPokemon[0].pokeMoves[1].priority = option1->pokeMoves[1].priority;
+                heldPokemon[0].pokeMoves[1].target_id = option1->pokeMoves[1].target_id;
+                heldPokemon[0].pokeMoves[1].damage_class_id = option1->pokeMoves[1].damage_class_id;
+                heldPokemon[0].pokeMoves[1].effect_id = option1->pokeMoves[1].effect_id;
+                heldPokemon[0].pokeMoves[1].effect_chance = option1->pokeMoves[1].effect_chance;
+                heldPokemon[0].pokeMoves[1].contest_type_id = option1->pokeMoves[1].contest_type_id;
+                heldPokemon[0].pokeMoves[1].contest_effect_id = option1->pokeMoves[1].contest_effect_id;
+                heldPokemon[0].pokeMoves[1].super_contest_effect_id = option1->pokeMoves[1].super_contest_effect_id;
 
             
-            terrainMap->pc.heldPokemon[0].gender = option1->gender;
-            terrainMap->pc.heldPokemon[0].shiny = option1->shiny;
-            terrainMap->pc.heldPokemon[0].level = option1->level;
+            heldPokemon[0].gender = option1->gender;
+            heldPokemon[0].shiny = option1->shiny;
+            heldPokemon[0].level = option1->level;
             for (int i = 0; i < 101; i++) {
-                terrainMap->pc.heldPokemon[0].levels[i].growth_rate_id = option1->levels[i].growth_rate_id;
-                terrainMap->pc.heldPokemon[0].levels[i].level = option1->levels[i].level;
-                terrainMap->pc.heldPokemon[0].levels[i].experience = option1->levels[i].experience;
+                heldPokemon[0].levels[i].growth_rate_id = option1->levels[i].growth_rate_id;
+                heldPokemon[0].levels[i].level = option1->levels[i].level;
+                heldPokemon[0].levels[i].experience = option1->levels[i].experience;
             }
-            terrainMap->pc.heldPokemon[0].exp = option1->exp;
-            terrainMap->pc.heldPokemon[0].lvlRate = option1->lvlRate;
-            terrainMap->pc.heldPokemon[0].pokeId = option1->pokeId;
-            terrainMap->pc.heldPokemon[0].speciesId = option1->speciesId;
-            terrainMap->pc.heldPokemon[0].hp = option1->hp;
-            terrainMap->pc.heldPokemon[0].hpIV = option1->hpIV;
-            terrainMap->pc.heldPokemon[0].attack = option1->attack;
-            terrainMap->pc.heldPokemon[0].attackIV = option1->attackIV;
-            terrainMap->pc.heldPokemon[0].defense = option1->defense;
-            terrainMap->pc.heldPokemon[0].defenseIV = option1->defenseIV;
-            terrainMap->pc.heldPokemon[0].specialAttack = option1->specialAttack;
-            terrainMap->pc.heldPokemon[0].specialAttackIV = option1->specialAttackIV;
-            terrainMap->pc.heldPokemon[0].specialDefense = option1->specialDefense;
-            terrainMap->pc.heldPokemon[0].specialDefenseIV = option1->specialDefenseIV;
-            terrainMap->pc.heldPokemon[0].speed = option1->speed;
-            terrainMap->pc.heldPokemon[0].speedIV = option1->speedIV;
+            heldPokemon[0].exp = option1->exp;
+            heldPokemon[0].lvlRate = option1->lvlRate;
+            heldPokemon[0].pokeId = option1->pokeId;
+            heldPokemon[0].speciesId = option1->speciesId;
+            heldPokemon[0].hp = option1->hp;
+            heldPokemon[0].hpIV = option1->hpIV;
+            heldPokemon[0].attack = option1->attack;
+            heldPokemon[0].attackIV = option1->attackIV;
+            heldPokemon[0].defense = option1->defense;
+            heldPokemon[0].defenseIV = option1->defenseIV;
+            heldPokemon[0].specialAttack = option1->specialAttack;
+            heldPokemon[0].specialAttackIV = option1->specialAttackIV;
+            heldPokemon[0].specialDefense = option1->specialDefense;
+            heldPokemon[0].specialDefenseIV = option1->specialDefenseIV;
+            heldPokemon[0].speed = option1->speed;
+            heldPokemon[0].speedIV = option1->speedIV;
         } else if (strcmp(str, "2") == 0) { // Choose Option 2
-            strcpy(terrainMap->pc.heldPokemon[0].name, option2->name);
+            strcpy(heldPokemon[0].name, option2->name);
 
             // Copy moves
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].id = option2->pokeMoves[0].id;
-                strcpy(terrainMap->pc.heldPokemon[0].pokeMoves[0].identifier, option2->pokeMoves[0].identifier);
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].generation_id = option2->pokeMoves[0].generation_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].type_id = option2->pokeMoves[0].type_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].power = option2->pokeMoves[0].power;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].pp = option2->pokeMoves[0].pp;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].accuracy = option2->pokeMoves[0].accuracy;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].priority = option2->pokeMoves[0].priority;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].target_id = option2->pokeMoves[0].target_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].damage_class_id = option2->pokeMoves[0].damage_class_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].effect_id = option2->pokeMoves[0].effect_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].effect_chance = option2->pokeMoves[0].effect_chance;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].contest_type_id = option2->pokeMoves[0].contest_type_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].contest_effect_id = option2->pokeMoves[0].contest_effect_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].super_contest_effect_id = option2->pokeMoves[0].super_contest_effect_id;
+                heldPokemon[0].pokeMoves[0].id = option2->pokeMoves[0].id;
+                strcpy(heldPokemon[0].pokeMoves[0].identifier, option2->pokeMoves[0].identifier);
+                heldPokemon[0].pokeMoves[0].generation_id = option2->pokeMoves[0].generation_id;
+                heldPokemon[0].pokeMoves[0].type_id = option2->pokeMoves[0].type_id;
+                heldPokemon[0].pokeMoves[0].power = option2->pokeMoves[0].power;
+                heldPokemon[0].pokeMoves[0].pp = option2->pokeMoves[0].pp;
+                heldPokemon[0].pokeMoves[0].accuracy = option2->pokeMoves[0].accuracy;
+                heldPokemon[0].pokeMoves[0].priority = option2->pokeMoves[0].priority;
+                heldPokemon[0].pokeMoves[0].target_id = option2->pokeMoves[0].target_id;
+                heldPokemon[0].pokeMoves[0].damage_class_id = option2->pokeMoves[0].damage_class_id;
+                heldPokemon[0].pokeMoves[0].effect_id = option2->pokeMoves[0].effect_id;
+                heldPokemon[0].pokeMoves[0].effect_chance = option2->pokeMoves[0].effect_chance;
+                heldPokemon[0].pokeMoves[0].contest_type_id = option2->pokeMoves[0].contest_type_id;
+                heldPokemon[0].pokeMoves[0].contest_effect_id = option2->pokeMoves[0].contest_effect_id;
+                heldPokemon[0].pokeMoves[0].super_contest_effect_id = option2->pokeMoves[0].super_contest_effect_id;
 
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].id = option2->pokeMoves[1].id;
-                strcpy(terrainMap->pc.heldPokemon[0].pokeMoves[1].identifier, option2->pokeMoves[1].identifier);
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].generation_id = option2->pokeMoves[1].generation_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].type_id = option2->pokeMoves[1].type_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].power = option2->pokeMoves[1].power;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].pp = option2->pokeMoves[1].pp;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].accuracy = option2->pokeMoves[1].accuracy;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].priority = option2->pokeMoves[1].priority;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].target_id = option2->pokeMoves[1].target_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].damage_class_id = option2->pokeMoves[1].damage_class_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].effect_id = option2->pokeMoves[1].effect_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].effect_chance = option2->pokeMoves[1].effect_chance;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].contest_type_id = option2->pokeMoves[1].contest_type_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].contest_effect_id = option2->pokeMoves[1].contest_effect_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].super_contest_effect_id = option2->pokeMoves[1].super_contest_effect_id;
+                heldPokemon[0].pokeMoves[1].id = option2->pokeMoves[1].id;
+                strcpy(heldPokemon[0].pokeMoves[1].identifier, option2->pokeMoves[1].identifier);
+                heldPokemon[0].pokeMoves[1].generation_id = option2->pokeMoves[1].generation_id;
+                heldPokemon[0].pokeMoves[1].type_id = option2->pokeMoves[1].type_id;
+                heldPokemon[0].pokeMoves[1].power = option2->pokeMoves[1].power;
+                heldPokemon[0].pokeMoves[1].pp = option2->pokeMoves[1].pp;
+                heldPokemon[0].pokeMoves[1].accuracy = option2->pokeMoves[1].accuracy;
+                heldPokemon[0].pokeMoves[1].priority = option2->pokeMoves[1].priority;
+                heldPokemon[0].pokeMoves[1].target_id = option2->pokeMoves[1].target_id;
+                heldPokemon[0].pokeMoves[1].damage_class_id = option2->pokeMoves[1].damage_class_id;
+                heldPokemon[0].pokeMoves[1].effect_id = option2->pokeMoves[1].effect_id;
+                heldPokemon[0].pokeMoves[1].effect_chance = option2->pokeMoves[1].effect_chance;
+                heldPokemon[0].pokeMoves[1].contest_type_id = option2->pokeMoves[1].contest_type_id;
+                heldPokemon[0].pokeMoves[1].contest_effect_id = option2->pokeMoves[1].contest_effect_id;
+                heldPokemon[0].pokeMoves[1].super_contest_effect_id = option2->pokeMoves[1].super_contest_effect_id;
 
             
-            terrainMap->pc.heldPokemon[0].gender = option2->gender;
-            terrainMap->pc.heldPokemon[0].shiny = option2->shiny;
-            terrainMap->pc.heldPokemon[0].level = option2->level;
+            heldPokemon[0].gender = option2->gender;
+            heldPokemon[0].shiny = option2->shiny;
+            heldPokemon[0].level = option2->level;
             for (int i = 0; i < 101; i++) {
-                terrainMap->pc.heldPokemon[0].levels[i].growth_rate_id = option2->levels[i].growth_rate_id;
-                terrainMap->pc.heldPokemon[0].levels[i].level = option2->levels[i].level;
-                terrainMap->pc.heldPokemon[0].levels[i].experience = option2->levels[i].experience;
+                heldPokemon[0].levels[i].growth_rate_id = option2->levels[i].growth_rate_id;
+                heldPokemon[0].levels[i].level = option2->levels[i].level;
+                heldPokemon[0].levels[i].experience = option2->levels[i].experience;
             }
-            terrainMap->pc.heldPokemon[0].exp = option2->exp;
-            terrainMap->pc.heldPokemon[0].lvlRate = option2->lvlRate;
-            terrainMap->pc.heldPokemon[0].pokeId = option2->pokeId;
-            terrainMap->pc.heldPokemon[0].speciesId = option2->speciesId;
-            terrainMap->pc.heldPokemon[0].hp = option2->hp;
-            terrainMap->pc.heldPokemon[0].hpIV = option2->hpIV;
-            terrainMap->pc.heldPokemon[0].attack = option2->attack;
-            terrainMap->pc.heldPokemon[0].attackIV = option2->attackIV;
-            terrainMap->pc.heldPokemon[0].defense = option2->defense;
-            terrainMap->pc.heldPokemon[0].defenseIV = option2->defenseIV;
-            terrainMap->pc.heldPokemon[0].specialAttack = option2->specialAttack;
-            terrainMap->pc.heldPokemon[0].specialAttackIV = option2->specialAttackIV;
-            terrainMap->pc.heldPokemon[0].specialDefense = option2->specialDefense;
-            terrainMap->pc.heldPokemon[0].specialDefenseIV = option2->specialDefenseIV;
-            terrainMap->pc.heldPokemon[0].speed = option2->speed;
-            terrainMap->pc.heldPokemon[0].speedIV = option2->speedIV;
+            heldPokemon[0].exp = option2->exp;
+            heldPokemon[0].lvlRate = option2->lvlRate;
+            heldPokemon[0].pokeId = option2->pokeId;
+            heldPokemon[0].speciesId = option2->speciesId;
+            heldPokemon[0].hp = option2->hp;
+            heldPokemon[0].hpIV = option2->hpIV;
+            heldPokemon[0].attack = option2->attack;
+            heldPokemon[0].attackIV = option2->attackIV;
+            heldPokemon[0].defense = option2->defense;
+            heldPokemon[0].defenseIV = option2->defenseIV;
+            heldPokemon[0].specialAttack = option2->specialAttack;
+            heldPokemon[0].specialAttackIV = option2->specialAttackIV;
+            heldPokemon[0].specialDefense = option2->specialDefense;
+            heldPokemon[0].specialDefenseIV = option2->specialDefenseIV;
+            heldPokemon[0].speed = option2->speed;
+            heldPokemon[0].speedIV = option2->speedIV;
         } else if (strcmp(str, "3") == 0) { // Choose Option 3
-            strcpy(terrainMap->pc.heldPokemon[0].name, option3->name);
+            strcpy(heldPokemon[0].name, option3->name);
 
             // Copy moves
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].id = option3->pokeMoves[0].id;
-                strcpy(terrainMap->pc.heldPokemon[0].pokeMoves[0].identifier, option3->pokeMoves[0].identifier);
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].generation_id = option3->pokeMoves[0].generation_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].type_id = option3->pokeMoves[0].type_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].power = option3->pokeMoves[0].power;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].pp = option3->pokeMoves[0].pp;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].accuracy = option3->pokeMoves[0].accuracy;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].priority = option3->pokeMoves[0].priority;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].target_id = option3->pokeMoves[0].target_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].damage_class_id = option3->pokeMoves[0].damage_class_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].effect_id = option3->pokeMoves[0].effect_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].effect_chance = option3->pokeMoves[0].effect_chance;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].contest_type_id = option3->pokeMoves[0].contest_type_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].contest_effect_id = option3->pokeMoves[0].contest_effect_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[0].super_contest_effect_id = option3->pokeMoves[0].super_contest_effect_id;
+                heldPokemon[0].pokeMoves[0].id = option3->pokeMoves[0].id;
+                strcpy(heldPokemon[0].pokeMoves[0].identifier, option3->pokeMoves[0].identifier);
+                heldPokemon[0].pokeMoves[0].generation_id = option3->pokeMoves[0].generation_id;
+                heldPokemon[0].pokeMoves[0].type_id = option3->pokeMoves[0].type_id;
+                heldPokemon[0].pokeMoves[0].power = option3->pokeMoves[0].power;
+                heldPokemon[0].pokeMoves[0].pp = option3->pokeMoves[0].pp;
+                heldPokemon[0].pokeMoves[0].accuracy = option3->pokeMoves[0].accuracy;
+                heldPokemon[0].pokeMoves[0].priority = option3->pokeMoves[0].priority;
+                heldPokemon[0].pokeMoves[0].target_id = option3->pokeMoves[0].target_id;
+                heldPokemon[0].pokeMoves[0].damage_class_id = option3->pokeMoves[0].damage_class_id;
+                heldPokemon[0].pokeMoves[0].effect_id = option3->pokeMoves[0].effect_id;
+                heldPokemon[0].pokeMoves[0].effect_chance = option3->pokeMoves[0].effect_chance;
+                heldPokemon[0].pokeMoves[0].contest_type_id = option3->pokeMoves[0].contest_type_id;
+                heldPokemon[0].pokeMoves[0].contest_effect_id = option3->pokeMoves[0].contest_effect_id;
+                heldPokemon[0].pokeMoves[0].super_contest_effect_id = option3->pokeMoves[0].super_contest_effect_id;
 
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].id = option3->pokeMoves[1].id;
-                strcpy(terrainMap->pc.heldPokemon[0].pokeMoves[1].identifier, option3->pokeMoves[1].identifier);
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].generation_id = option3->pokeMoves[1].generation_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].type_id = option3->pokeMoves[1].type_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].power = option3->pokeMoves[1].power;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].pp = option3->pokeMoves[1].pp;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].accuracy = option3->pokeMoves[1].accuracy;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].priority = option3->pokeMoves[1].priority;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].target_id = option3->pokeMoves[1].target_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].damage_class_id = option3->pokeMoves[1].damage_class_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].effect_id = option3->pokeMoves[1].effect_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].effect_chance = option3->pokeMoves[1].effect_chance;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].contest_type_id = option3->pokeMoves[1].contest_type_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].contest_effect_id = option3->pokeMoves[1].contest_effect_id;
-                terrainMap->pc.heldPokemon[0].pokeMoves[1].super_contest_effect_id = option3->pokeMoves[1].super_contest_effect_id;
+                heldPokemon[0].pokeMoves[1].id = option3->pokeMoves[1].id;
+                strcpy(heldPokemon[0].pokeMoves[1].identifier, option3->pokeMoves[1].identifier);
+                heldPokemon[0].pokeMoves[1].generation_id = option3->pokeMoves[1].generation_id;
+                heldPokemon[0].pokeMoves[1].type_id = option3->pokeMoves[1].type_id;
+                heldPokemon[0].pokeMoves[1].power = option3->pokeMoves[1].power;
+                heldPokemon[0].pokeMoves[1].pp = option3->pokeMoves[1].pp;
+                heldPokemon[0].pokeMoves[1].accuracy = option3->pokeMoves[1].accuracy;
+                heldPokemon[0].pokeMoves[1].priority = option3->pokeMoves[1].priority;
+                heldPokemon[0].pokeMoves[1].target_id = option3->pokeMoves[1].target_id;
+                heldPokemon[0].pokeMoves[1].damage_class_id = option3->pokeMoves[1].damage_class_id;
+                heldPokemon[0].pokeMoves[1].effect_id = option3->pokeMoves[1].effect_id;
+                heldPokemon[0].pokeMoves[1].effect_chance = option3->pokeMoves[1].effect_chance;
+                heldPokemon[0].pokeMoves[1].contest_type_id = option3->pokeMoves[1].contest_type_id;
+                heldPokemon[0].pokeMoves[1].contest_effect_id = option3->pokeMoves[1].contest_effect_id;
+                heldPokemon[0].pokeMoves[1].super_contest_effect_id = option3->pokeMoves[1].super_contest_effect_id;
 
             
-            terrainMap->pc.heldPokemon[0].gender = option3->gender;
-            terrainMap->pc.heldPokemon[0].shiny = option3->shiny;
-            terrainMap->pc.heldPokemon[0].level = option3->level;
+            heldPokemon[0].gender = option3->gender;
+            heldPokemon[0].shiny = option3->shiny;
+            heldPokemon[0].level = option3->level;
             for (int i = 0; i < 101; i++) {
-                terrainMap->pc.heldPokemon[0].levels[i].growth_rate_id = option3->levels[i].growth_rate_id;
-                terrainMap->pc.heldPokemon[0].levels[i].level = option3->levels[i].level;
-                terrainMap->pc.heldPokemon[0].levels[i].experience = option3->levels[i].experience;
+                heldPokemon[0].levels[i].growth_rate_id = option3->levels[i].growth_rate_id;
+                heldPokemon[0].levels[i].level = option3->levels[i].level;
+                heldPokemon[0].levels[i].experience = option3->levels[i].experience;
             }
-            terrainMap->pc.heldPokemon[0].exp = option3->exp;
-            terrainMap->pc.heldPokemon[0].lvlRate = option3->lvlRate;
-            terrainMap->pc.heldPokemon[0].pokeId = option3->pokeId;
-            terrainMap->pc.heldPokemon[0].speciesId = option3->speciesId;
-            terrainMap->pc.heldPokemon[0].hp = option3->hp;
-            terrainMap->pc.heldPokemon[0].hpIV = option3->hpIV;
-            terrainMap->pc.heldPokemon[0].attack = option3->attack;
-            terrainMap->pc.heldPokemon[0].attackIV = option3->attackIV;
-            terrainMap->pc.heldPokemon[0].defense = option3->defense;
-            terrainMap->pc.heldPokemon[0].defenseIV = option3->defenseIV;
-            terrainMap->pc.heldPokemon[0].specialAttack = option3->specialAttack;
-            terrainMap->pc.heldPokemon[0].specialAttackIV = option3->specialAttackIV;
-            terrainMap->pc.heldPokemon[0].specialDefense = option3->specialDefense;
-            terrainMap->pc.heldPokemon[0].specialDefenseIV = option3->specialDefenseIV;
-            terrainMap->pc.heldPokemon[0].speed = option3->speed;
-            terrainMap->pc.heldPokemon[0].speedIV = option3->speedIV;
+            heldPokemon[0].exp = option3->exp;
+            heldPokemon[0].lvlRate = option3->lvlRate;
+            heldPokemon[0].pokeId = option3->pokeId;
+            heldPokemon[0].speciesId = option3->speciesId;
+            heldPokemon[0].hp = option3->hp;
+            heldPokemon[0].hpIV = option3->hpIV;
+            heldPokemon[0].attack = option3->attack;
+            heldPokemon[0].attackIV = option3->attackIV;
+            heldPokemon[0].defense = option3->defense;
+            heldPokemon[0].defenseIV = option3->defenseIV;
+            heldPokemon[0].specialAttack = option3->specialAttack;
+            heldPokemon[0].specialAttackIV = option3->specialAttackIV;
+            heldPokemon[0].specialDefense = option3->specialDefense;
+            heldPokemon[0].specialDefenseIV = option3->specialDefenseIV;
+            heldPokemon[0].speed = option3->speed;
+            heldPokemon[0].speedIV = option3->speedIV;
         } else {
             strcpy(str, "");
             mvwprintw(win, 17, 10, "%-67s", "Please enter 1, 2, or 3 to make your selection: ");
@@ -1148,22 +1148,22 @@ void givePlayerPokemon(terrainMap *terrainMap) {
 }
 
 void pokemonBattle(terrainMap *terrainMap, character *trainer) {
-    mvprintw(22, 5, "You have a %s!", terrainMap->pc.heldPokemon[0].name);
+    mvprintw(22, 5, "You have a %s!", heldPokemon[0].name);
 
-    mvprintw(24, 3, "HP: %d", terrainMap->pc.heldPokemon[0].hp);
-    mvprintw(25, 3, "ATK: %d", terrainMap->pc.heldPokemon[0].attack);
-    mvprintw(26, 3, "DEF: %d", terrainMap->pc.heldPokemon[0].defense);
-    mvprintw(27, 3, "Sp-ATK: %d", terrainMap->pc.heldPokemon[0].specialAttack);
-    mvprintw(28, 3, "Sp-DEF: %d", terrainMap->pc.heldPokemon[0].specialDefense);
-    mvprintw(29, 3, "SPD: %d", terrainMap->pc.heldPokemon[0].speed);
+    mvprintw(24, 3, "HP: %d", heldPokemon[0].hp);
+    mvprintw(25, 3, "ATK: %d", heldPokemon[0].attack);
+    mvprintw(26, 3, "DEF: %d", heldPokemon[0].defense);
+    mvprintw(27, 3, "Sp-ATK: %d", heldPokemon[0].specialAttack);
+    mvprintw(28, 3, "Sp-DEF: %d", heldPokemon[0].specialDefense);
+    mvprintw(29, 3, "SPD: %d", heldPokemon[0].speed);
     mvprintw(30, 3, "Knows:");
-    mvprintw(31, 4, "%s", terrainMap->pc.heldPokemon[0].pokeMoves[0].identifier);
-    mvprintw(32, 4, "%s", terrainMap->pc.heldPokemon[0].pokeMoves[1].identifier);
+    mvprintw(31, 4, "%s", heldPokemon[0].pokeMoves[0].identifier);
+    mvprintw(32, 4, "%s", heldPokemon[0].pokeMoves[1].identifier);
     
-    mvprintw(24, 16, "Gender: %s", (terrainMap->pc.heldPokemon[0].gender ? "Male" : "Female"));
-    mvprintw(25, 16, "Shiny: %s", (terrainMap->pc.heldPokemon[0].shiny ? "Yes" : "No"));
-    mvprintw(26, 16, "Level: %d", terrainMap->pc.heldPokemon[0].level);
-    mvprintw(27, 16, "Exp: %d", terrainMap->pc.heldPokemon[0].exp);
+    mvprintw(24, 16, "Gender: %s", (heldPokemon[0].gender ? "Male" : "Female"));
+    mvprintw(25, 16, "Shiny: %s", (heldPokemon[0].shiny ? "Yes" : "No"));
+    mvprintw(26, 16, "Level: %d", heldPokemon[0].level);
+    mvprintw(27, 16, "Exp: %d", heldPokemon[0].exp);
 
     int pokemonToFight = rand() % trainer->numPokemon;
 
@@ -1176,8 +1176,8 @@ void pokemonBattle(terrainMap *terrainMap, character *trainer) {
     mvprintw(28, 31, "Sp-DEF: %d", trainer->heldPokemon[pokemonToFight].specialDefense);
     mvprintw(29, 31, "SPD: %d", trainer->heldPokemon[pokemonToFight].speed);
     mvprintw(30, 31, "Knows:");
-    mvprintw(31, 31, "%s", trainer->heldPokemon[pokemonToFight].pokeMoves[pokemonToFight].identifier);
-    mvprintw(32, 31, "%s", trainer->heldPokemon[pokemonToFight].pokeMoves[1].identifier);
+    mvprintw(31, 32, "%s", trainer->heldPokemon[pokemonToFight].pokeMoves[pokemonToFight].identifier);
+    mvprintw(32, 32, "%s", trainer->heldPokemon[pokemonToFight].pokeMoves[1].identifier);
     
     mvprintw(24, 44, "Gender: %s", (trainer->heldPokemon[pokemonToFight].gender ? "Male" : "Female"));
     mvprintw(25, 44, "Shiny: %s", (trainer->heldPokemon[pokemonToFight].shiny ? "Yes" : "No"));
@@ -1751,7 +1751,7 @@ void generateTrainers(terrainMap *terrainMap, int numTrainers) {
                             int northSouth = trainers[numTrainers - 1]->rowPos - trainers[scroll]->rowPos;
 
                             int westEast = trainers[numTrainers - 1]->colPos - trainers[scroll]->colPos;
-                            mvprintw(0, 0, "Trainer: %c\t Distance to Player: %d %s %d %s \t\t", trainers[scroll]->npc, (northSouth > 0 ? northSouth : northSouth * -1), (northSouth > 0 ? "North" : "South"), (westEast > 0 ? westEast : westEast * -1), ((westEast > 0 ? "West" : "East")));
+                            mvprintw(0, 0, "Trainer: %c\t Number of Pokemon: %d   Distance to Player: %d %s %d %s \t\t", trainers[scroll]->npc, trainers[scroll]->numPokemon, (northSouth > 0 ? northSouth : northSouth * -1), (northSouth > 0 ? "North" : "South"), (westEast > 0 ? westEast : westEast * -1), ((westEast > 0 ? "West" : "East")));
                             mvprintw(22, 0, "Displaying Trainers: Press UP or DOWN to scroll, 'esc' to Close List");
                             refresh();
                             int c = getch();

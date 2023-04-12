@@ -36,11 +36,7 @@
         Trainers get a pokemon now, just need to add the formula thingy so they have a chance to get up to a max of 6
     3:08pm-3:15pm
         Updated readme in preparation for submission
-    3:15pm-
-
-
-All generated trainers
-(NPCs) should be given at least one random Pokemon. Assuming the trainer has n Pokemon, there is a 60%
-probability that the trainer will get an (n + 1)th Pokemon, up to a maximum of 6 Pokemon.
-
-
+    3:15pm-3:47pm
+        Added 60% chance thing for trainers to gain another pokemon everytime they gain one, up to a max of 6.
+        Finished up updating readme and changelog
+        Prepping for submission
